@@ -6,7 +6,9 @@ from utils import load_data
 
 st.set_page_config(page_title="Regression Model Comparison", layout="wide")
 st.title("Car MPG Prediction - Model Comparison")
-st.markdown("Repository https://github.com/tayaee/linear-regression-ridge-lasso-elasticnet")
+st.markdown(
+    "Repository https://github.com/tayaee/linear-regression-ridge-lasso-elasticnet"
+)
 
 # Load data to get feature names and min/max for inputs
 X, _ = load_data()
@@ -40,8 +42,17 @@ if st.button("Predict"):
         try:
             coef_df = predict.get_coefficients_df(models, feature_names)
 
-            # Highlight Intercept specially or formatted
+            # Method 1
+            # st.dataframe(coef_df)
+
+            # Method 2
+            coef_df = coef_df.set_index("Feature")
             st.dataframe(coef_df.style.highlight_max(axis=1))
+
+            # Method 3
+            # cols_to_highlight = [col for col in coef_df.columns if col != "Feature"]
+            # st.dataframe(coef_df.style.highlight_max(axis=1, subset=cols_to_highlight))
+
         except Exception as e:
             st.error(f"Error displaying coefficients: {e}")
 
