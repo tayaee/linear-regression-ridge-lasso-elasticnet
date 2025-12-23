@@ -47,7 +47,7 @@ if st.button("Predict"):
 
             # Method 2
             coef_df = coef_df.set_index("Feature")
-            st.dataframe(coef_df.style.highlight_max(axis=1))
+            st.dataframe(coef_df.T.style.highlight_max(axis=1))
 
             # Method 3
             # cols_to_highlight = [col for col in coef_df.columns if col != "Feature"]
