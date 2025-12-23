@@ -5,8 +5,8 @@ import predict
 from utils import load_data
 
 st.set_page_config(page_title="Regression Model Comparison", layout="wide")
-
 st.title("Car MPG Prediction - Model Comparison")
+st.markdown("Repository https://github.com/tayaee/linear-regression-ridge-lasso-elasticnet")
 
 # Load data to get feature names and min/max for inputs
 X, _ = load_data()

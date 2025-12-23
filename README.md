@@ -7,4 +7,4 @@
 * web.bat
 
 ### Streamlit Community Cloud
-* Live demo: https://linear-regression-ridge-lasso-elasticnet.streamlit.app/
+* Live demo: https://linear-regression-ridge-laapp-elasticnet-kfpjyybzbwf7ddrz6zrsz.streamlit.app/
